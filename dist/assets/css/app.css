@@ -1,0 +1,276 @@
+@charset "UTF-8";
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+/* Указываем box sizing */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.product {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.product__header {
+  text-align: center;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.product__subheader {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 40px;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 360px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.card__header {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.card__img {
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+.card__description {
+  margin-top: 30px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card__price {
+  margin-top: 30px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.card__button {
+  margin-top: 30px;
+  width: 300px;
+  height: 57px;
+  background: #2CC34F;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 900;
+}
+
+.card__button:hover {
+  background: #22943C;
+}
+
+.clicked {
+  background-color: #22943C;
+  cursor: auto;
+}
+
+.cart {
+  background-color: #fff;
+  height: 162px;
+}
+
+.sum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 60px 0;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.sum span {
+  color: #FF0000;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 992px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 567px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    width: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    -o-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
